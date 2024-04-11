@@ -1,0 +1,14 @@
+class Solution{
+    
+    // function to convert a given Gray equivalent n to Binary equivalent.
+    public static int grayToBinary(int n) {
+        
+     int mask = n;
+        while (mask != 0) {
+            mask >>= 1;
+            n ^= mask;
+        }
+        return n;
+    }
+       
+}
