@@ -1,0 +1,28 @@
+class Compute {
+    public String isSubset( long a1[], long a2[], long n, long m) {
+        ArrayList<Long> list1=new ArrayList<>();
+        ArrayList<Long> list2=new ArrayList<>();
+        for(int i=0;i<n;i++){
+            list1.add(a1[i]);
+        }
+        for(int j=0;j<m;j++){
+            list2.add(a2[j]);
+        }
+        for(int i=0;i<a2.length;i++){
+            if(list1.contains(a2[i])){
+                list1.remove(a2[i]);
+                list2.remove(a2[i]);
+            }
+            else{
+            return "No";
+        }
+        
+        }
+        if(list2.isEmpty()){
+            return "Yes";
+        }
+        
+        return "No";
+        
+    }
+}
