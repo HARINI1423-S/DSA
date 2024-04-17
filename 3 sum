@@ -1,0 +1,21 @@
+class Solution
+{
+    //Function to find if there exists a triplet in the 
+    //array A[] which sums up to X.
+    public static boolean find3Numbers(int A[], int n, int X) { 
+    
+       HashSet<Integer> set=new HashSet<>();
+       for(int i=0;i<n;i++){
+           for(int j=i+1;j<n;j++){
+               int cmp = X-(A[i]+A[j]);
+               if(set.contains(cmp)){
+                   return true;
+               }
+           }
+           set.add(A[i]);
+  
+       }
+       return false;
+    
+    }
+}
