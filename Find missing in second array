@@ -1,0 +1,18 @@
+
+class Solution
+{
+    ArrayList<Integer> findMissing(int a[], int b[], int n, int m)
+    {
+        Set<Integer> bSet = new HashSet<>();
+        for (int num : b) {
+            bSet.add(num);
+        }
+        ArrayList<Integer> missingElements = new ArrayList<>();
+        for (int num : a) {
+            if (!bSet.contains(num)) {
+                missingElements.add(num);
+            }
+        }
+        return missingElements;
+    }
+}
