@@ -1,0 +1,18 @@
+class Solution {
+    // Function to return the count of the number of elements in
+    // the intersection of two arrays.
+    public static int NumberofElementsInIntersection(int a[], int b[], int n, int m) {
+        Set<Integer> ans=new HashSet<Integer>();
+        Set<Integer> copyset=new HashSet<>();
+        
+        for(int k=0;k<n;k++){
+            copyset.add(a[k]);
+        }
+            for(int j=0;j<m;j++){
+                if(copyset.contains(b[j])){
+                    ans.add(b[j]);
+                }
+        }
+        return ans.size();
+    }
+}
