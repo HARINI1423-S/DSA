@@ -1,0 +1,26 @@
+class Solution {
+    public static int lenOfLongSubarr(int A[], int N, int K) {
+        int start = 0;
+        int end = 0;
+        int maxlength = 0;
+        int sum = 0;
+
+        while (end < N) {
+            sum += A[end];
+
+            while (sum > K && start <= end) {
+                sum -= A[start];
+                start++;
+            }
+
+            if (sum == K) {
+                int length = end - start + 1;
+                maxlength = Math.max(maxlength, length);
+            }
+
+            end++;
+        }
+
+        return maxlength;
+    }
+}
